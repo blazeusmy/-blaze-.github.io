@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>注册页面</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    form {
+      max-width: 300px;
+      margin: 0 auto;
+    }
+    input[type="text"], input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+    }
+    input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <h2>注册</h2>
+  <form id="registrationForm">
+    <input type="text" id="username" name="username" placeholder="用户名" required>
+    <input type="password" id="password" name="password" placeholder="密码" required>
+    <input type="password" id="confirmPassword" name="confirmPassword" placeholder="确认密码" required>
+    <input type="submit" value="注册">
+  </form>
+
+  <script>
+    document.getElementById("registrationForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      
+      var username = document.getElementById("username").value;
+      var password = document.getElementById("password").value;
+      var confirmPassword = document.getElementById("confirmPassword").value;
+      
+      if (password !== confirmPassword) {
+        alert("密码和确认密码不匹配");
+        return;
+      }
+      
+      // 在这里可以添加发送注册请求的代码
+      // 这里只是一个简单的示例
+      alert("注册成功！用户名：" + username + "，密码：" + password);
+      
+      // 注册成功后可以重定向到其他页面
+      // window.location.href = "dashboard.html";
+    });
+  </script>
+</body>
+</html>
